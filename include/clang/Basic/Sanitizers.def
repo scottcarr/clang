@@ -95,6 +95,9 @@ SANITIZER_GROUP("cfi", CFI,
 // Safe Stack
 SANITIZER("safe-stack", SafeStack)
 
+// Data Conf
+SANITIZER("dataconf", DataConf)
+
 // -fsanitize=undefined includes all the sanitizers which have low overhead, no
 // ABI or address space layout implications, and only catch undefined behavior.
 SANITIZER_GROUP("undefined", Undefined,

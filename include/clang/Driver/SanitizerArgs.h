@@ -53,6 +53,9 @@ class SanitizerArgs {
   bool needsSafeStackRt() const {
     return Sanitizers.has(SanitizerKind::SafeStack);
   }
+  bool needsDataConfRt() const {
+    return Sanitizers.has(SanitizerKind::DataConf);
+  }
 
   bool requiresPIE() const;
   bool needsUnwindTables() const;

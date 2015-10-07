@@ -2602,8 +2602,9 @@ collectSanitizerRuntimes(const ToolChain &TC, const ArgList &Args,
   if (SanArgs.needsSafeStackRt())
     StaticRuntimes.push_back("safestack");
 
-  // for now always link with safestack
-  StaticRuntimes.push_back("safestack");
+  if (SanArgs.needsDataConfRt()) {
+    StaticRuntimes.push_back("safestack");
+  }
 }
 
 // Should be called before we add system libraries (C++ ABI, libstdc++/libc++,
